@@ -23,6 +23,10 @@ print (Field)
 PieceMax=4
 PieceMay=4
 Piece=list2d(PieceMax,PieceMay)
+PieceX=0
+PieceY=0
+PieceR=0 #Rotation 0..3
+
 print (Piece)
 
 
