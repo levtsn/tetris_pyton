@@ -17,7 +17,13 @@ FieldMax=10
 FieldMay=20
 
 Field=list2d(FieldMax,FieldMay)
+print (Field)
 
+#фигура
+PieceMax=4
+PieceMay=4
+Piece=list2d(PieceMax,PieceMay)
+print (Piece)
 
 
 
