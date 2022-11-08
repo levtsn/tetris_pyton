@@ -12,8 +12,8 @@ def create_list2d(max, may, value=0):
     return buf
 
 
-field_max = 3
-field_may = 5
+field_max = 5
+field_may = 6
 
 field = create_list2d(field_max, field_may)
 print(field)
@@ -43,13 +43,16 @@ def check_collision():
 
 
 def field_remove_full_lines():
-    for y in range(len(field), 0, -1):
-        line_full = False
+    for y in range(len(field)):
+        full=True
         for x in range(len(field[y])):
             if field[y][x] == 0:
-                continue
-            for y2 in range(y, 0, -1):
+                full=False
+        if full==True:
+
+            for y2 in range(y, 1, -1):
                 field[y2] = field[y2 - 1]
+
             for i in range(len(field[0])):
                 field[0][i] = 0
 
@@ -58,7 +61,19 @@ piece_x = 0
 piece_y = 0
 print(check_collision())
 
+field = [
+    [0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 1, 1, 0, 0],
+    [1, 1, 1, 1, 1],
+    [1, 0, 0, 0, 0],
+    [1, 0, 0, 0, 0]
+
+]
+
+print(field)
 field_remove_full_lines()
+print ("after")
 print(field)
 
 print()
